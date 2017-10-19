@@ -1,0 +1,35 @@
+<% include ../partials/header %>
+
+<div class="ui grid">
+  <div class="four wide column"></div>
+  <div class="eight wide column">
+        <div class="ui main text container segment">
+        <div class="ui huge header"><%=bulletin.title %></div>
+     
+        <div class="item">
+            <img class="ui centered rounded image" src="<%=bulletin.image %>">
+           
+        </div>
+        <div class="item">Description: <%=bulletin.description%></div>
+        
+        <% bulletin.comments.forEach(function(comment){ %>
+            <p>
+                <strong><%=comment.author %></strong> - <%= comment.text %>
+            </p>
+
+        <% }) %>
+        
+        
+        <a class="ui blue basic button" href="/bulletin/<%=bulletin._id%>/Edit">Edit</a>
+        <form id="delete" action="/bulletin/<%=bulletin._id %>?_method=DELETE" method="POST">
+        <button class="ui red basic button">Delete</button>
+        </form>
+        
+        </div>
+  </div>
+  <div class="four wide column"></div>
+</div>
+
+
+
+<% include ../partials/footer %>

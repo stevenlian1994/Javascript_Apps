@@ -1,0 +1,31 @@
+<% include ../partials/header %>
+
+<div class="ui grid">
+  <div class="four wide column"></div>
+  <div class="eight wide column">
+      <h1>INDEX PAGE!!</h1>
+
+        <% bulletins.forEach(function(bulletin){ %>
+            <div>
+                <h2><%=bulletin.title%></h2>
+                <img src="<%= bulletin.image %>">
+                <br>
+                <%=bulletin.description%>
+                <br>
+                <span><%= bulletin.created %></span>
+                <br>
+        
+                <a class="ui blue basic button" href="/bulletin/<%=bulletin._id%>">Read more:</a>
+            </div>
+        <% }) %>
+      
+  </div>
+  <div class="four wide column"></div>
+</div>
+
+
+
+
+
+
+<% include ../partials/footer %>
