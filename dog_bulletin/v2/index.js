@@ -4,7 +4,7 @@ var express = require("express"),
     mongoose = require("mongoose"),
     passport = require("passport"),
     LocalStrategy = require("passport-local"),
-    User = require("./models/user")
+    User = require("./models/user") //models sets up User class
  
 
 
@@ -34,6 +34,7 @@ app.use(function(req, res, next){
    next();
 });
 
+// ============
 
  app.get("/", function(req, res){
     res.render("landing"); 
@@ -80,7 +81,7 @@ app.post("/login", passport.authenticate("local",
     
 });
 
-//logic route
+
 app.get("/logout", function(req, res){
     req.logout();
     res.redirect("/");
