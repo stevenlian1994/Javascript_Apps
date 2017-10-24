@@ -1,0 +1,21 @@
+<% include partials/header %>
+
+<h1>LAKES PAGE</h1>
+
+<form action="/lakes" method="post">
+    <input type="text" name="name" placeholder="name"></input>
+    <input type="text" name="image" placeholder="image url"></input>
+    <button>Submit</button>
+</form>
+
+
+<%lakes.forEach(function(lake){ %>
+    <p><%=lake.name%></p>
+
+<img src="<%=lake.image %>">
+    
+    
+<% }); %>
+
+
+<% include partials/footer %>
