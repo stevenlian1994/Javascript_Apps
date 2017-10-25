@@ -7,7 +7,7 @@ var lakeSchema = new mongoose.Schema({
 
 
 
-module.exports = mongoose.model("Lake", lakeSchema);
+module.exports = mongoose.model("Motorcycle", lakeSchema);
 
 
 

@@ -1,21 +1,31 @@
 <% include partials/header %>
 
-<h1>LAKES PAGE</h1>
-
-<form action="/lakes" method="post">
-    <input type="text" name="name" placeholder="name"></input>
-    <input type="text" name="image" placeholder="image url"></input>
-    <button>Submit</button>
-</form>
-
-
-<%lakes.forEach(function(lake){ %>
-    <p><%=lake.name%></p>
-
-<img src="<%=lake.image %>">
+<div class="container">
+    <header class="jumbotron">
+        <h1>Welcome to YelpLakes!</h1>
+        <p>View our hand-picked lakes from all over the world!</p>
+        <a class="btn btn-primary" href="/new">Add Lakes</a>
+        
+    </header>
     
+
+
+    <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <% lakes.forEach(function(lake){ %>
+           <div class="col-md-3">
+               <div class="thumbnail">
+                    <img src="<%= lake.image %>">
+               </div>
+               <div class="caption">
+                   <h4><%= lake.name %></h4>
+               </div>
     
-<% }); %>
+            
+            </div>  
+        <% }); %>
+        
+    </div>
+</div>
 
 
 <% include partials/footer %>

@@ -10,4 +10,4 @@ var userSchema = mongoose.Schema({
 userSchema.plugin(passportLocalMongoose);
 
 //and this?
-module.exports = mongoose.model("User", userSchema);
+module.exports = mongoose.model("Lake", userSchema);

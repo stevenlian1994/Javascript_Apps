@@ -2,22 +2,42 @@
 <html>
     <head>
         <title>Lake Bulletin </title>
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css"></link>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
     </head>
     <body>
         <!--Navbar-->
-        <div class="ui fixed menu">
-            <div class="ui container">
-                <div class="header item"><i class="code icon"></i>Blog Site</div>
-                <a href="/" class="item">Home</a>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">YelpLakes</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/login" class="item">Login</a></li>
+                        <li><a href="/register" class="item">Sign Up</a></li>
+                        <li><a href="/logout" class="item">Sign Out</a></li>
+                        
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+     <!--Navbar-->
+        <!--<div class="ui fixed menu">-->
+        <!--    <div class="ui container">-->
+        <!--        <div class="header item"><i class="code icon"></i>Blog Site</div>-->
+        <!--        <a href="/" class="item">Home</a>-->
                 <!--<a href="/bulletin" class="item">Bulletin Board</a>-->
                 <!--<a href="/bulletin/new" class="item">New Bulletin Post</a>-->
-            </div>
-        <div class="right menu">
-            <a href="/login" class="item">Login</a>
-            <a href="/register" class="item">Sign Up</a>
-            <a href="/logout" class="item">Sign Out</a>
-        </div>
-        </div>
-        <div id="placeholder-padding" style="height:60px"></div>
+        <!--    </div>-->
+        <!--<div class="right menu">-->
+        <!--    <a href="/login" class="item">Login</a>-->
+        <!--    <a href="/register" class="item">Sign Up</a>-->
+        <!--    <a href="/logout" class="item">Sign Out</a>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div id="placeholder-padding" style="height:60px"></div>-->

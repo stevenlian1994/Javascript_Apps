@@ -7,12 +7,11 @@ var express = require("express"),
     User = require("./models/user"), //models sets up User class
     Lake = require("./models/lake");
  
-
-
     
 //APP CONFIG
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://localhost/yelp_lakes", {useMongoClient: true});
+app.use(express.static(__dirname + "/public"));
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}));
@@ -41,6 +40,11 @@ app.use(function(req, res, next){
     res.render("landing"); 
  });
  
+  app.get("/new", function(req, res){
+    res.render("new"); 
+ });
+ 
+ 
  app.get("/lakes", function(req, res){
      Lake.find({}, function(err, allLakes){
          if(err) {
@@ -50,19 +54,22 @@ app.use(function(req, res, next){
      });
      
  });
- 
+ //CREATE ROUTE
  app.post("/lakes", function(req, res){
-     var newLake = new Lake({name: req.body.name, image: req.body.image})
-     Lake.create(newLake, function(err, lake){
+     var name = req.body.name;
+     var image = req.body.image;
+     var newLake = new Lake({name: name, image: image});
+     Lake.create(newLake, function(err, newlyCreated){
          if(err){
              console.log(err);
              return res.render("landing");
          } else {
-             res.render("lakes");
+             res.redirect("/lakes");
          }
      });
  });
-    
+ 
+
 app.get("/welcome_page", isLoggedIn, function(req, res){
     res.render("welcome_page");
 });
